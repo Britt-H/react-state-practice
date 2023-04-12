@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
+import './CountButton'
 
 function App() {
   const [subscribed, setSubscribed] = useState(false);
@@ -15,6 +16,7 @@ function App() {
       <button onClick={() => setAlerts(!alerts)}>
         {alerts ? "Stop Email Alerts" : "Get Email Alerts"}
       </button>
+      <countButton />
     </section>
   );
 }

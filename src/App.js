@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
 
 function App() {
+  const [subscribed, setSubscribed] = useState(false);
+  const [alerts, setAlerts] = useState(false)
+  // console.log("Subscribed status:", subscribed);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      <p>Please click to subscribe to my updates!</p>
+      <button onClick={() => setSubscribed(!subscribed)}>
+        {subscribed ? "Unsubscribe" : "Subscribe"}
+      </button>
+      <button onClick={() => setAlerts(!alerts)}>
+        {alerts ? "Stop Email Alerts" : "Get Email Alerts"}
+      </button>
+    </section>
   );
 }
 
